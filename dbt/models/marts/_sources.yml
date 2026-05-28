@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: silver_3nf
+    schema: main
+    tables:
+      - name: match
+      - name: stadium
+      - name: country
+      - name: team
