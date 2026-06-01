@@ -52,6 +52,8 @@ The purpose of the this project was learning and reinforcing data engineering pr
 
 ## Roadmap
 1. MVP (minimal data, contains the bones of full medallion architecture)
+2. Fix known data issues, competition and Stadiums
+3. Add conical sources for country, stadium
 2. Add additional kaggle rugby datasets
 3. Scrap data results from r/rugbyunion
 4. Integrate LLM functionalty
