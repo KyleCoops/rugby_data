@@ -31,15 +31,14 @@ Allows for quickly identifiying schema drift from a source. The process from lan
 ## Data quality & lineage.
 Data lineage is stored throughout the process through each layer with associated metadata fields stored per row of data. This allows for each row to track the full lineage, version of code and run produced the row. The metadata is as follows:
 
-- Pipeline id: Unique identifier of the code version
-- Run idd: Unique identifier set by the orchestrator.
-- Bronze landing date: The date the row ingested into bronze landing zone.
-- Bronze raw date: The date the row was ingested into the bronze raw zone.
-- Date processed: The date the row was processed into the silver source-aligned zone.
-- Business key hash: The combination between source and business attributes.
-- Source row hash: A combination of all the rows for a source, that is used for source-side changes.
-- Integrated row hash: Key of an attribute in the silver 3nf model
-- hash: Identified for gold dimensions 
+- Pipeline id: Unique identifier of the code version.
+- Run id: Unique identifier set by the orchestrator.
+- Bronze source: Text field of the source 
+- Bronze landing date ingested: The date the row ingested into bronze landing zone.
+- Bronze raw date ingested: The date the row was ingested into the bronze raw zone.
+- Silver source processed: The date the row was processed into the silver source-aligned zone.
+- Source 3nf processed: A combination of all the rows for a source, that is used for source-side changes.
+- Silver integrated hash: Key of an attribute in the silver 3nf model.
 
 ## AI usage
 
