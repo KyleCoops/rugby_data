@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: silver_3nf
-    schema: main
+    schema: silver
     tables:
       - name: match
       - name: stadium

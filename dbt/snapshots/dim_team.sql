@@ -1,15 +1,28 @@
+-- snapshots/dim_team.sql
+{% snapshot dim_team %}
 
+{{
+    config(
+        target_schema='gold',
+        unique_key='team_id',
+        strategy='check',
+        check_cols=['name', 'country_name']
+    )
+}}
 
-{{ config(materialized='table') }}
+SELECT
+    t.team_id,
+    t.name,
+    c.country AS country_name,
+    t.run_id,
+    t.pipeline_id,
+    t.silver_3nf_processed,
+    t.silver_source_processed,
+    t.bronze_raw_date_ingested,
+    t.bronze_landing_date_ingested,
+    t.bronze_source
+FROM {{ source('silver_3nf', 'team') }} t
+LEFT JOIN {{ source('silver_3nf', 'country') }} c
+    ON t.country_id = c.country_id
 
-with source_data as (
-
-    select *
-    from {{ source('silver_3nf', 'team') }} as m
-    join {{ source('silver_3nf', 'country') }} as c 
-    on c.country_id=m.country_id
-
-)
-
-select *
-from source_data
+{% endsnapshot %}
