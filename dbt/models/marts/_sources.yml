@@ -8,3 +8,10 @@ sources:
       - name: stadium
       - name: country
       - name: team
+  - name: mart
+    schema: gold
+    tables:
+      - name: dim_team
+      - name: dim_stadium
+      - name: dim_ountry
+      - name: team

@@ -1,15 +1,15 @@
-{% snapshot dim_team %}
+{% snapshot dim_stadium %}
 
 {{
     config(
-        unique_key='team_id',
+        unique_key='stadium_id',
         strategy='check',
         check_cols=['name', 'country_name']
     )
 }}
 
 SELECT
-    t.team_id,
+    t.stadium_id,
     t.name,
     c.country AS country_name,
     t.run_id,
@@ -19,7 +19,7 @@ SELECT
     t.bronze_raw_date_ingested,
     t.bronze_landing_date_ingested,
     t.bronze_source
-FROM {{ source('silver_3nf', 'team') }} t
+FROM {{ source('silver_3nf', 'stadium') }} t
 LEFT JOIN {{ source('silver_3nf', 'country') }} c
     ON t.country_id = c.country_id
 

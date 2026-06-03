@@ -2,7 +2,15 @@
 snapshots:
   - name: dim_team
     config:
-      target_schema: gold
+      target_schema: main_marts
+      unique_key: team_id
+      strategy: check
+      check_cols:
+        - name
+        - country_id
+  - name: dim_stadium
+    config:
+      target_schema: main_marts
       unique_key: team_id
       strategy: check
       check_cols:

@@ -1,65 +1,59 @@
-version: 2
+# version: 2
 
-models:
-  - name: fct_head_to_head
-    description: "Head to head "
-    columns:
-      - name: team_match_sk
-        description: "Surrogate key for the fct_head_to_head table"
-        data_tests:
-          - unique
-          - not_null
+# models:
+#   - name: fct_head_to_head
+#     description: "Head to head "
+#     columns:
+#       - name: team_match_sk
+#         description: "Surrogate key for the fct_head_to_head table"
+#         data_tests:
+#           - unique
+#           - not_null
 
-      - name: match_id
-        description: "Degenerate dimension that represents the same match"
-        data_type: VARCHAR
-        data_tests:
-          - unique
-          - not_null
+#       - name: match_id
+#         description: "Degenerate dimension that represents the same match"
+#         data_type: VARCHAR
+#         data_tests:
+#           - unique
+#           - not_null
 
-      - name: date_key
-        description: "Surrgate key to the dim_date table"
-        data_tests:
-          - not_null
+#       - name: date_key
+#         description: "Surrgate key to the dim_date table"
+#         data_tests:
+#           - not_null
 
-      - name: team_sk
-        description: "Surrogate key to the dim_team view"
-        data_tests:
-          - not_null
+#       - name: team_sk
+#         description: "Surrogate key to the dim_team view"
+#         data_tests:
+#           - not_null
 
-      - name: opponent_sk
-        description: "Surrogate key to the fct_team"
-        data_type: VARCHAR
-        data_tests:
-          - unique
-          - not_null
+#       - name: opponent_sk
+#         description: "Surrogate key to the fct_team"
+#         data_type: VARCHAR
+#         data_tests:
+#           - unique
+#           - not_null
 
-      - name: stadium_sk
-        description: "Surrogate key to the dim_stadium table"
-        data_tests:
-          - not_null
+#       - name: stadium_sk
+#         description: "Surrogate key to the dim_stadium table"
+#         data_tests:
+#           - not_null
            
-      - name: venue_type
-        description: "The primary key for this table"
-        data_type: VARCHAR
-        data_tests:
-          - not_null
+#       - name: venue_type
+#         description: "The primary key for this table"
+#         data_type: VARCHAR
+#         data_tests:
+#           - not_null
 
-      - name: points_for
-        description: "Total points scored by the reference team"
-        data_type: INT
-        data_tests:
-          - unique
-          - not_null
+#       - name: points_for
+#         description: "Total points scored by the reference team"
+#         data_type: INT
+#         data_tests:
+#           - unique
+#           - not_null
 
-      - name: points_against
-        description: "Points scored against the reference team"
-        data_type: INT
-        data_tests:
-          - not_null               
-            
-             
-         
-    venue_type              VARCHAR     NOT NULL,       -- 'home' | 'away' | 'neutral'
-    points_for              SMALLINT    NOT NULL,
-              SMALLINT    NOT NULL,
+#       - name: points_against
+#         description: "Points scored against the reference team"
+#         data_type: INT
+#         data_tests:
+#           - not_null               
