@@ -12,7 +12,7 @@ s.name as stadium_name
 FROM {{ source('silver_3nf', 'match') }} m
 join {{ source('silver_3nf', 'stadium') }} s on s.stadium_id=m.stadium_id 
 join {{ source('silver_3nf', 'team') }} ht on ht.team_id=m.home_team_id
-join {{ source('silver_3nf', 'team') }} awt on awt.team_id=m.home_team_id),
+join {{ source('silver_3nf', 'team') }} awt on awt.team_id=m.away_team_id),
 
 mirror_source as (
 SELECT 
