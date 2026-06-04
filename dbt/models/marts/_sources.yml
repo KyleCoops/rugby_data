@@ -13,5 +13,5 @@ sources:
     tables:
       - name: dim_team
       - name: dim_stadium
-      - name: dim_ountry
+      - name: dim_country
       - name: team

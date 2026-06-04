@@ -1,0 +1,11 @@
+rugby_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('RUGBY_DB_PATH', '../data/silver_3nf.duckdb') }}"
+      threads: 1
+    prod:
+      type: duckdb
+      path: "{{ env_var('RUGBY_DB_PATH', '../data/silver_3nf.duckdb') }}"
+      threads: 4
